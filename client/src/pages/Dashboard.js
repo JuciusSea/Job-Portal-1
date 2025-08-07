@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout/Layout';
 import Spinner from '../components/shared/Spinner';
-import '../styles/Dashboard.css'; // Import CSS mới
+import '../styles/Dashboard.css'; 
 
 const Dashboard = () => {
   const [jobs, setJobs] = useState([]);

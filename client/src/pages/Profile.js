@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import { setUser } from '../redux/features/auth/authSlice';
 import Layout from '../components/Layout/Layout';
 import Spinner from '../components/shared/Spinner';
-import '../styles/Forms.css'; // Import CSS mới
+import '../styles/Forms.css'; 
 
 const Profile = () => {
   const { user, loading } = useSelector((state) => state.auth);

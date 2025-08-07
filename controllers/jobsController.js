@@ -66,10 +66,10 @@ export const applyJobController = async (req, res, next) => {
     if (!job) {
       return res.status(404).json({ success: false, message: `No job found with ID ${id}` });
     }
-    if (job.applicants.includes(req.user.userId)) {
+    if ((job.appliedUsers ?? []).includes(req.user.userId)) {
       return res.status(400).json({ success: false, message: "You have already applied for this job" });
     }
-    job.applicants.push(req.user.userId);
+    job.appliedUsers.push(req.user.userId);
     await job.save();
     res.status(200).json({ success: true, message: "Application submitted successfully" });
   } catch (error) {
